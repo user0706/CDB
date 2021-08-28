@@ -1,0 +1,26 @@
+{
+    "initalisation":{
+        "path_option":"Local",
+        "path":"C:\\",
+        "language":"English",
+        "date_format":"Auto (local)"
+    },
+    "profiles":{
+        "admin":{
+            "name":"admin",
+            "password":"admin"
+        },
+        "user":{
+            "name":"user",
+            "password":"1"
+        },
+        "guest":{
+            "name":"guest",
+            "password":""
+        },
+        
+    },
+    "style":{
+        "theme":""
+    }
+}

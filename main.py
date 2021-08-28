@@ -3,6 +3,7 @@ from PyQt5 import uic
 from PyQt5.QtGui     import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore    import *
+from myqt import *
 import sys
 
 from functions import *
@@ -18,6 +19,8 @@ class Ui(QMainWindow):
 		uic.loadUi('mainwindow.ui', self)
 
 		self.splitter.setSizes([800,280])
+		self.actionConfiguration.triggered.connect(lambda: self.stackedWidget.setCurrentIndex(1))
+		self.pushButton_cancel.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
 
 		# RIGHT AREA
 		item_data_template = Bunch({"photo_path": "","item_name":"","manufacturer_name":"","item_location":"","current_quantity":"","quantity_per_package":"","supplier":"","distributor":"","more_info":"","keywords":[],"msds_path":"","safety_labels":{"prohibition":[],"warning":[],"mandatory":[],"emergency":[],"firefighting":[],"chemical":[]}})
