@@ -1,0 +1,23 @@
+{
+	"00000001":{
+		"photo_path":"C:\\Users\\FJKASDHFJKH\\Downloads\\E301200-5L.png",
+		"item_name":"Test 1",
+		"manufacturer_name":"",
+		"item_location":"",
+		"current_quantity":"",
+		"quantity_per_package":"",
+		"supplier":"",
+		"distributor":"",
+		"more_info":"",
+		"keywords":[],
+		"msds_path":"",
+		"safety_labels":{
+			"prohibition":[],
+			"warning":[],
+			"mandatory":[],
+			"emergency":[],
+			"firefighting":[],
+			"chemical":[]
+		}
+	}
+}
