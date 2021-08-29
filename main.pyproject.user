@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.14.0, 2021-08-22T19:17:13. -->
+<!-- Written by QtCreator 4.14.0, 2021-08-29T08:31:55. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -169,16 +169,16 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">main</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/FJKASDHFJKH/Documents/CDB/main.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/FJKASDHFJKH/Documents/CDB/main.py</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{8e33c5ae-10de-49be-af8e-2639028176e6}</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\FJKASDHFJKH\Documents\CDB\main.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">main2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/Marko/CDB/main.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Marko/CDB/main.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{18d6772b-e06d-4ef6-8dc6-4ac4c66068fe}</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\Marko\CDB\main.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/FJKASDHFJKH/Documents/CDB</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Marko/CDB</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

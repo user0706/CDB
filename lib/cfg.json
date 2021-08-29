@@ -1,26 +1,26 @@
 {
-    "initalisation":{
-        "path_option":"Local",
-        "path":"C:\\",
-        "language":"English",
-        "date_format":"Auto (local)"
+    "initialisation": {
+        "path_option": "Local",
+        "path": "./lib/data.json",
+        "language": "English",
+        "date_format": "Auto (local)"
     },
-    "profiles":{
-        "admin":{
-            "name":"admin",
-            "password":"admin"
+    "profiles": {
+        "current_profile": "User",
+        "admin": {
+            "name": "Admin",
+            "password": "admin"
         },
-        "user":{
-            "name":"user",
-            "password":"1"
+        "user": {
+            "name": "User",
+            "password": "1"
         },
-        "guest":{
-            "name":"guest",
-            "password":""
-        },
-        
+        "guest": {
+            "name": "Guest",
+            "password": ""
+        }
     },
-    "style":{
-        "theme":""
+    "style": {
+        "theme": "Light"
     }
 }

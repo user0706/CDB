@@ -10,6 +10,7 @@ from functions import *
 
 SELECTED_PHOTO_PATH = ""
 SELECTED_MSDS_PATH = ""
+DATA_PATH = ""
 
 item_changed_template = ""
 
@@ -19,8 +20,14 @@ class Ui(QMainWindow):
 		uic.loadUi('mainwindow.ui', self)
 
 		self.splitter.setSizes([800,280])
+		self.lineEdit_current_password.setEchoMode(QLineEdit.Password)
+		self.lineEdit_new_password.setEchoMode(QLineEdit.Password)
 		self.actionConfiguration.triggered.connect(lambda: self.stackedWidget.setCurrentIndex(1))
 		self.pushButton_cancel.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
+		self.pushButton_add_data_path.clicked.connect(lambda: onAddDataPath(self))
+		self.pushButton_apply.clicked.connect(lambda: onApplay(self, app))
+
+		setCFG(self, app)
 
 		# RIGHT AREA
 		item_data_template = Bunch({"photo_path": "","item_name":"","manufacturer_name":"","item_location":"","current_quantity":"","quantity_per_package":"","supplier":"","distributor":"","more_info":"","keywords":[],"msds_path":"","safety_labels":{"prohibition":[],"warning":[],"mandatory":[],"emergency":[],"firefighting":[],"chemical":[]}})

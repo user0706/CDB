@@ -15,8 +15,17 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
     <property name="topMargin">
-     <number>10</number>
+     <number>9</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
     </property>
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
@@ -44,7 +53,6 @@
          <widget class="QSplitter" name="splitter">
           <property name="styleSheet">
            <string notr="true">QSplitter::handle {
-    image: url(:/img/grip-vertical.svg);
 	border-left: 1px solid rgba(0, 0, 0, 10%);
 	border-right: 1px solid rgba(0, 0, 0, 10%);
 }
@@ -54,11 +62,7 @@ QSplitter::handle:horizontal {
 }
 
 QSplitter::handle:vertical {
-    height: 15px;
-}
-
-QSplitter#tabWidget_Screen::handle:pressed {
-    image: url(:/img/grip-vertical.svg);
+    height: 6px;
 }</string>
           </property>
           <property name="orientation">
@@ -71,15 +75,18 @@ QSplitter#tabWidget_Screen::handle:pressed {
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <layout class="QVBoxLayout" name="verticalLayout_14">
             <property name="leftMargin">
-             <number>9</number>
+             <number>0</number>
             </property>
             <property name="topMargin">
              <number>0</number>
             </property>
             <property name="bottomMargin">
-             <number>0</number>
+             <number>10</number>
             </property>
             <item>
              <widget class="QLineEdit" name="lineEdit_search">
@@ -101,10 +108,22 @@ QSplitter#tabWidget_Screen::handle:pressed {
                 <height>25</height>
                </size>
               </property>
+              <property name="styleSheet">
+               <string notr="true">QLineEdit{
+	margin-right:9px;
+	margin-left:9px;
+}</string>
+              </property>
              </widget>
             </item>
             <item>
-             <widget class="QWidget" name="widget_items" native="true"/>
+             <widget class="QWidget" name="widget_items" native="true">
+              <property name="styleSheet">
+               <string notr="true">QWidget#widget_items{
+	margin-right:9px;
+}</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
@@ -115,20 +134,38 @@ QSplitter#tabWidget_Screen::handle:pressed {
              <height>0</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="rightMargin">
+             <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
             <item>
              <widget class="QToolBox" name="toolBox">
+              <property name="styleSheet">
+               <string notr="true">QToolBox{
+	margin-left:9px;
+	border:none;
+}</string>
+              </property>
               <property name="currentIndex">
-               <number>2</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="page">
                <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>651</width>
-                 <height>484</height>
+                 <width>791</width>
+                 <height>504</height>
                 </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
                </property>
                <attribute name="label">
                 <string>General</string>
@@ -137,7 +174,7 @@ QSplitter#tabWidget_Screen::handle:pressed {
                 <item alignment="Qt::AlignLeft">
                  <widget class="QFrame" name="frame_7">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -171,6 +208,12 @@ QSplitter#tabWidget_Screen::handle:pressed {
                        <width>200</width>
                        <height>290</height>
                       </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">border:solid;</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
                      </property>
                      <property name="text">
                       <string/>
@@ -276,7 +319,7 @@ QSplitter#tabWidget_Screen::handle:pressed {
                 <item>
                  <widget class="QFrame" name="frame_2">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -336,6 +379,9 @@ QSplitter#tabWidget_Screen::handle:pressed {
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="placeholderText">
+                      <string>Exmp.: DOT 4</string>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -344,7 +390,7 @@ QSplitter#tabWidget_Screen::handle:pressed {
                 <item>
                  <widget class="QFrame" name="frame_3">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -404,6 +450,9 @@ QSplitter#tabWidget_Screen::handle:pressed {
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="placeholderText">
+                      <string>Exmp.: Würth</string>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -412,7 +461,7 @@ QSplitter#tabWidget_Screen::handle:pressed {
                 <item>
                  <widget class="QFrame" name="frame_4">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -472,6 +521,9 @@ QSplitter#tabWidget_Screen::handle:pressed {
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="placeholderText">
+                      <string>Exmp.: Laboratory</string>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -480,7 +532,7 @@ QSplitter#tabWidget_Screen::handle:pressed {
                 <item>
                  <widget class="QFrame" name="frame_5">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -575,7 +627,7 @@ QDoubleSpinBox::up-button  {
                 <item alignment="Qt::AlignLeft">
                  <widget class="QFrame" name="frame_6">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -623,8 +675,8 @@ QDoubleSpinBox::up-button  {
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>651</width>
-                 <height>484</height>
+                 <width>791</width>
+                 <height>504</height>
                 </rect>
                </property>
                <attribute name="label">
@@ -634,7 +686,7 @@ QDoubleSpinBox::up-button  {
                 <item>
                  <widget class="QFrame" name="frame_9">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -694,6 +746,9 @@ QDoubleSpinBox::up-button  {
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="placeholderText">
+                      <string>Exmp.: 500 ml</string>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -702,7 +757,7 @@ QDoubleSpinBox::up-button  {
                 <item>
                  <widget class="QFrame" name="frame_10">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -762,6 +817,9 @@ QDoubleSpinBox::up-button  {
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="placeholderText">
+                      <string>Exmp.: Example name</string>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -770,7 +828,7 @@ QDoubleSpinBox::up-button  {
                 <item>
                  <widget class="QFrame" name="frame_11">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -830,6 +888,9 @@ QDoubleSpinBox::up-button  {
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="placeholderText">
+                      <string>Exmp.: Example name</string>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -838,7 +899,7 @@ QDoubleSpinBox::up-button  {
                 <item>
                  <widget class="QFrame" name="frame_12">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -898,6 +959,9 @@ QDoubleSpinBox::up-button  {
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="placeholderText">
+                      <string>Exmp.: Brake fluid</string>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -906,7 +970,7 @@ QDoubleSpinBox::up-button  {
                 <item>
                  <widget class="QFrame" name="frame_13">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -966,6 +1030,9 @@ QDoubleSpinBox::up-button  {
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="placeholderText">
+                      <string>Exmp.: Oil, example kw1, example kw2</string>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -991,8 +1058,8 @@ QDoubleSpinBox::up-button  {
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>651</width>
-                 <height>484</height>
+                 <width>791</width>
+                 <height>504</height>
                 </rect>
                </property>
                <attribute name="label">
@@ -1002,7 +1069,7 @@ QDoubleSpinBox::up-button  {
                 <item>
                  <widget class="QFrame" name="frame_8">
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -1061,6 +1128,9 @@ QDoubleSpinBox::up-button  {
                      </property>
                      <property name="text">
                       <string/>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Exmp.: C:\dot4_MSDS.pdf</string>
                      </property>
                     </widget>
                    </item>
@@ -1195,7 +1265,7 @@ QDoubleSpinBox::up-button  {
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>631</width>
+                     <width>771</width>
                      <height>83</height>
                     </rect>
                    </property>
@@ -1288,7 +1358,7 @@ QDoubleSpinBox::up-button  {
                     <item alignment="Qt::AlignTop">
                      <widget class="QFrame" name="frame_17">
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
@@ -1379,7 +1449,7 @@ QDoubleSpinBox::up-button  {
                     <item alignment="Qt::AlignTop">
                      <widget class="QFrame" name="frame_18">
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
@@ -1470,7 +1540,7 @@ QDoubleSpinBox::up-button  {
                     <item alignment="Qt::AlignTop">
                      <widget class="QFrame" name="frame_19">
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
@@ -1561,7 +1631,7 @@ QDoubleSpinBox::up-button  {
                     <item alignment="Qt::AlignTop">
                      <widget class="QFrame" name="frame_20">
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
@@ -1652,7 +1722,7 @@ QDoubleSpinBox::up-button  {
                     <item>
                      <widget class="QFrame" name="frame_21">
                       <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
@@ -1760,8 +1830,8 @@ QDoubleSpinBox::up-button  {
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>631</width>
-                     <height>321</height>
+                     <width>771</width>
+                     <height>343</height>
                     </rect>
                    </property>
                   </widget>
@@ -1774,7 +1844,7 @@ QDoubleSpinBox::up-button  {
             <item alignment="Qt::AlignHCenter">
              <widget class="QFrame" name="frame">
               <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
+               <enum>QFrame::NoFrame</enum>
               </property>
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
@@ -1784,7 +1854,7 @@ QDoubleSpinBox::up-button  {
                 <number>0</number>
                </property>
                <property name="topMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="rightMargin">
                 <number>0</number>
@@ -1794,8 +1864,20 @@ QDoubleSpinBox::up-button  {
                </property>
                <item>
                 <widget class="QPushButton" name="pushButton_submit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>70</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>70</width>
+                   <height>25</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0, 255, 0, 225);</string>
+                  <string notr="true">background-color: rgba(0, 255, 0, 200);</string>
                  </property>
                  <property name="text">
                   <string>Submit</string>
@@ -1804,8 +1886,20 @@ QDoubleSpinBox::up-button  {
                </item>
                <item>
                 <widget class="QPushButton" name="pushButton_delete">
+                 <property name="minimumSize">
+                  <size>
+                   <width>70</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>70</width>
+                   <height>25</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgba(255, 0, 0, 225);</string>
+                  <string notr="true">background-color: rgba(255, 0, 0, 200);</string>
                  </property>
                  <property name="text">
                   <string>Delete</string>
@@ -1859,7 +1953,7 @@ border-width:3px;
 }</string>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
@@ -1919,7 +2013,7 @@ border-width:3px;
               <item>
                <widget class="QFrame" name="frame_14">
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
@@ -2045,6 +2139,9 @@ border-width:3px;
                  <property name="topMargin">
                   <number>0</number>
                  </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
@@ -2103,7 +2200,7 @@ border-width:3px;
                   </widget>
                  </item>
                  <item alignment="Qt::AlignRight">
-                  <widget class="QPushButton" name="pushButton_load_data_path">
+                  <widget class="QPushButton" name="pushButton_add_data_path">
                    <property name="minimumSize">
                     <size>
                      <width>25</width>
@@ -2126,33 +2223,6 @@ border-width:3px;
                    </property>
                    <property name="text">
                     <string>upload</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QPushButton" name="pushButton_open_data_path">
-                   <property name="minimumSize">
-                    <size>
-                     <width>25</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>25</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>bootstrap-icons</family>
-                     <pointsize>11</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>folder2-open</string>
                    </property>
                   </widget>
                  </item>
@@ -2180,6 +2250,9 @@ border-width:3px;
                  </property>
                  <item alignment="Qt::AlignLeft">
                   <widget class="QLabel" name="label_7">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -2207,6 +2280,9 @@ border-width:3px;
                  </item>
                  <item alignment="Qt::AlignLeft">
                   <widget class="QComboBox" name="comboBox_language">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                      <horstretch>0</horstretch>
@@ -2259,6 +2335,9 @@ border-width:3px;
                  </property>
                  <item alignment="Qt::AlignLeft">
                   <widget class="QLabel" name="label_12">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -2286,6 +2365,9 @@ border-width:3px;
                  </item>
                  <item alignment="Qt::AlignLeft">
                   <widget class="QComboBox" name="comboBox_data_format">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                      <horstretch>0</horstretch>
@@ -2371,291 +2453,302 @@ border-width:3px;
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox_2">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
+            <layout class="QVBoxLayout" name="verticalLayout_18">
+             <property name="leftMargin">
+              <number>0</number>
              </property>
-             <property name="title">
-              <string>Profiles</string>
+             <property name="bottomMargin">
+              <number>0</number>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_17">
-              <item alignment="Qt::AlignLeft">
-               <widget class="QWidget" name="widget_4" native="true">
-                <layout class="QHBoxLayout" name="horizontalLayout_19">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <item>
-                  <widget class="QLabel" name="label_13">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>25</height>
-                    </size>
+             <item>
+              <widget class="QGroupBox" name="groupBox_2">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="title">
+                <string>Profiles</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_17">
+                <item alignment="Qt::AlignLeft">
+                 <widget class="QWidget" name="widget_4" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_19">
+                   <property name="leftMargin">
+                    <number>0</number>
                    </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>110</width>
-                     <height>25</height>
-                    </size>
+                   <property name="topMargin">
+                    <number>0</number>
                    </property>
-                   <property name="font">
-                    <font>
-                     <family>MS Shell Dlg 2</family>
-                     <pointsize>8</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Profile:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QComboBox" name="comboBox_profile">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>MS Shell Dlg 2</family>
-                     <pointsize>8</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
+                   <property name="bottomMargin">
+                    <number>0</number>
                    </property>
                    <item>
-                    <property name="text">
-                     <string>Admin</string>
-                    </property>
+                    <widget class="QLabel" name="label_13">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>110</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>MS Shell Dlg 2</family>
+                       <pointsize>8</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Profile:</string>
+                     </property>
+                    </widget>
                    </item>
                    <item>
-                    <property name="text">
-                     <string>User</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Guest</string>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QWidget" name="widget_5" native="true">
-                <layout class="QHBoxLayout" name="horizontalLayout_20">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <item alignment="Qt::AlignLeft">
-                  <widget class="QLabel" name="label_23">
-                   <property name="minimumSize">
-                    <size>
-                     <width>110</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>110</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>MS Shell Dlg 2</family>
-                     <pointsize>8</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Curremt password:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="lineEdit_current_password">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>25</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>MS Shell Dlg 2</family>
-                     <pointsize>8</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="whatsThis">
-                    <string>Data path/URL</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="frame_15">
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_18">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <item>
-                  <widget class="QWidget" name="widget_6" native="true">
-                   <layout class="QHBoxLayout" name="horizontalLayout_21">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <item alignment="Qt::AlignLeft">
-                     <widget class="QLabel" name="label_24">
-                      <property name="minimumSize">
-                       <size>
-                        <width>110</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>110</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>MS Shell Dlg 2</family>
-                        <pointsize>8</pointsize>
-                        <weight>75</weight>
-                        <bold>true</bold>
-                       </font>
-                      </property>
+                    <widget class="QComboBox" name="comboBox_profile">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>MS Shell Dlg 2</family>
+                       <pointsize>8</pointsize>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <item>
                       <property name="text">
-                       <string>New password:</string>
+                       <string>Admin</string>
                       </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="lineEdit_new_password">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>25</height>
-                       </size>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>User</string>
                       </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>25</height>
-                       </size>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Guest</string>
                       </property>
-                      <property name="font">
-                       <font>
-                        <family>MS Shell Dlg 2</family>
-                        <pointsize>8</pointsize>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="whatsThis">
-                       <string>Data path/URL</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item alignment="Qt::AlignHCenter">
-               <widget class="QPushButton" name="pushButton_custom_profile">
-                <property name="enabled">
-                 <bool>false</bool>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>MS Shell Dlg 2</family>
-                  <pointsize>8</pointsize>
-                  <weight>50</weight>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="whatsThis">
-                 <string>Under development</string>
-                </property>
-                <property name="text">
-                 <string>Create custom profile</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_5" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_20">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item alignment="Qt::AlignLeft">
+                    <widget class="QLabel" name="label_23">
+                     <property name="minimumSize">
+                      <size>
+                       <width>110</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>110</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>MS Shell Dlg 2</family>
+                       <pointsize>8</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Curremt password:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_current_password">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>MS Shell Dlg 2</family>
+                       <pointsize>8</pointsize>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="whatsThis">
+                      <string>Data path/URL</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_6" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_21">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item alignment="Qt::AlignLeft">
+                    <widget class="QLabel" name="label_24">
+                     <property name="minimumSize">
+                      <size>
+                       <width>110</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>110</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>MS Shell Dlg 2</family>
+                       <pointsize>8</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>New password:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_new_password">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>MS Shell Dlg 2</family>
+                       <pointsize>8</pointsize>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="whatsThis">
+                      <string>Data path/URL</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter">
+                 <widget class="QPushButton" name="pushButton_custom_profile">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>MS Shell Dlg 2</family>
+                    <pointsize>8</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="whatsThis">
+                   <string>Under development</string>
+                  </property>
+                  <property name="text">
+                   <string>Create custom profile</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_5">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </item>
            <item alignment="Qt::AlignTop">
             <widget class="QGroupBox" name="groupBox_3">
@@ -2740,17 +2833,17 @@ border-width:3px;
                    </property>
                    <item>
                     <property name="text">
-                     <string>Admin</string>
+                     <string>System</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>User</string>
+                     <string>Light</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>Guest</string>
+                     <string>Dark</string>
                     </property>
                    </item>
                   </widget>
@@ -2782,6 +2875,18 @@ border-width:3px;
           <layout class="QHBoxLayout" name="horizontalLayout_23">
            <item>
             <widget class="QPushButton" name="pushButton_apply">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>25</height>
+              </size>
+             </property>
              <property name="text">
               <string>Apply</string>
              </property>
@@ -2789,6 +2894,18 @@ border-width:3px;
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_cancel">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>25</height>
+              </size>
+             </property>
              <property name="text">
               <string>Cancel</string>
              </property>
@@ -2821,7 +2938,6 @@ border-width:3px;
    </widget>
    <addaction name="menuFile"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionConfiguration">
    <property name="text">
     <string>Configuration</string>
