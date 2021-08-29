@@ -20,12 +20,16 @@ class Ui(QMainWindow):
 		uic.loadUi('mainwindow.ui', self)
 
 		self.splitter.setSizes([800,280])
+		setProfilesToComboBox(self)
 		self.lineEdit_current_password.setEchoMode(QLineEdit.Password)
 		self.lineEdit_new_password.setEchoMode(QLineEdit.Password)
-		self.actionConfiguration.triggered.connect(lambda: self.stackedWidget.setCurrentIndex(1))
-		self.pushButton_cancel.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
+		self.lineEdit_login_password.setEchoMode(QLineEdit.Password)
+		self.actionConfiguration.triggered.connect(lambda: self.stackedWidget.setCurrentIndex(2))
+		self.pushButton_cancel.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
+		self.pushButton_log_out.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
 		self.pushButton_add_data_path.clicked.connect(lambda: onAddDataPath(self))
 		self.pushButton_apply.clicked.connect(lambda: onApplay(self, app))
+		self.pushButton_login.clicked.connect(lambda: onLogin(self))
 
 		setCFG(self, app)
 

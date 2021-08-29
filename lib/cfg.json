@@ -6,10 +6,10 @@
         "date_format": "Auto (local)"
     },
     "profiles": {
-        "current_profile": "User",
+        "current_profile": "Admin",
         "admin": {
             "name": "Admin",
-            "password": "admin"
+            "password": "adamin"
         },
         "user": {
             "name": "User",
@@ -21,6 +21,6 @@
         }
     },
     "style": {
-        "theme": "Light"
+        "theme": "Dark"
     }
 }

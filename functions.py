@@ -3,6 +3,7 @@ from PyQt5.QtGui     import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore    import *
 from myqt import *
+from profiles import *
 import sys
 import main
 import json
@@ -123,38 +124,6 @@ def onAddDataPath(self):
 	self.lineEdit_data_path.setText(data_path)
 	main.DATA_PATH = data_path
 
-def passwordMsg(msg_text, sub_msg_text):
-	print("tu sam")
-	msg = QMessageBox()
-	msg.setIcon(QMessageBox.Information)
-	
-	msg.setText(msg_text)
-	msg.setInformativeText(sub_msg_text)
-	msg.setWindowTitle("Password status")
-	msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-	msg.exec_()
-
-
-def changeProfilePassword(self, cfg_data):
-	current_profile = str(self.comboBox_profile.currentText())
-	if self.lineEdit_current_password.text()==None and self.lineEdit_new_password.text()==None:
-		pass
-	elif self.lineEdit_current_password.text()==cfg_data.profiles[current_profile.lower()]["password"] and self.lineEdit_new_password.text().strip()!="":
-		msg_text = "Password has been changed seccesfuly."
-		sub_msg_text = "The password for the {} profile was changed successfully.".format(str(self.comboBox_profile.currentText()))
-		cfg_data.profiles[current_profile.lower()]["password"]=self.lineEdit_new_password.text()
-	elif self.lineEdit_current_password.text()==cfg_data.profiles[current_profile.lower()]["password"] and self.lineEdit_new_password.text().strip()=="":
-		msg_text = "Password has not changed."
-		sub_msg_text = "The new password must not be a space or a blank field."
-	elif self.lineEdit_current_password.text()!=cfg_data.profiles[current_profile.lower()]["password"]:
-		msg_text = "Password has not changed."
-		sub_msg_text = "The current password entered is incorrect."
-	else:
-		print("error")
-	
-	passwordMsg(msg_text, sub_msg_text)
-	return cfg_data
-
 def onTheme(self, app):
 	selected_theme = self.comboBox_theme.currentText()
 	if selected_theme=="Light":
@@ -178,5 +147,20 @@ def onApplay(self, app):
 	cfg_data.style["theme"] = onTheme(self, app)
 
 	writeCFG(cfg_data)
-
+	self.stackedWidget.setCurrentIndex(1)
 	print(cfg_data)
+
+##################
+## LOGIN SCREEN ##
+##################
+def onLogin(self):
+    cfg_data = Bunch(loadCFG())
+    current_profile = str(self.comboBox_login_profiles.currentText())
+    if self.lineEdit_login_password.text()==cfg_data.profiles[current_profile.lower()]["password"]:
+        cfg_data.profiles["current_profile"] = str(self.comboBox_login_profiles.currentText())
+		writeCFG(cfg_data)
+		self.stackedWidget.setCurrentIndex(1)
+    else:
+        msg_text = "Login failed."
+        sub_msg_text = "The entered password does not match/incorrect the selected profile."
+        passwordMsg(msg_text, sub_msg_text)
