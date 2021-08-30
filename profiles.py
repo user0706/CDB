@@ -56,6 +56,32 @@ def setProfilesToComboBox(self):
     self.comboBox_login_profiles.addItems(profile_list)
     self.comboBox_profile.addItems(profile_list)
 
-def authorization(self, cfg_data):
-    current_profile = cfg_data.profiles["current_profile"]
-    #if 
+def authorization(self, current_profile):
+    authority_data = loadAuthority()
+    authority_profile = authority_data[current_profile]
+    self.toolButton_add_photo.setEnabled(authority_profile["add_photo"])
+    self.toolButton_open_photo_location.setEnabled(authority_profile["open_photo_location"])
+    self.lineEdit_item_name.setEnabled(authority_profile["item_name"])
+    self.lineEdit_manufacturer.setEnabled(authority_profile["manufacturer"])
+    self.lineEdit_item_location.setEnabled(authority_profile["item_location"])
+    self.doubleSpinBox_quantity.setEnabled(authority_profile["quantity"])
+    self.lineEdit_quantity_per_package.setEnabled(authority_profile["quantity_per_package"])
+    self.lineEdit_supplier.setEnabled(authority_profile["supplier"])
+    self.lineEdit_distributor.setEnabled(authority_profile["distributor"])
+    self.lineEdit_more_info.setEnabled(authority_profile["more_info"])
+    self.lineEdit_keywords.setEnabled(authority_profile["keywords"])
+    self.lineEdit_msds_path.setEnabled(authority_profile["msds_path"])
+    self.toolButton_upload_msds.setEnabled(authority_profile["upload_msds"])
+    self.toolButton_open_msds_in_folder.setEnabled(authority_profile["open_msds_in_folder"])
+    self.pushButton_submit.setEnabled(authority_profile["submit"])
+    self.pushButton_delete.setEnabled(authority_profile["delete"])
+    self.widget_prohibition.setEnabled(authority_profile["prohibition"])
+    self.frame_warning.setEnabled(authority_profile["warning"])
+    self.frame_mandatory.setEnabled(authority_profile["mandatory"])
+    self.frame_emergency.setEnabled(authority_profile["emergency"])
+    self.frame_firefighting.setEnabled(authority_profile["firefighting"])
+    self.frame_chemical.setEnabled(authority_profile["chemical"])
+    self.actionConfiguration.setEnabled(authority_profile["configuration"])
+    self.groupBox_initialization.setEnabled(authority_profile["initialisation"])
+    self.groupBox_profiles.setEnabled(authority_profile["profiles"])
+    self.groupBox_style.setEnabled(authority_profile["style"])

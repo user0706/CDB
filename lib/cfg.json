@@ -6,7 +6,10 @@
         "date_format": "Auto (local)"
     },
     "profiles": {
-        "current_profile": "Admin",
+        "remember": {
+            "status": true,
+            "profile": "Admin"
+        },
         "admin": {
             "name": "Admin",
             "password": "adamin"
@@ -18,7 +21,8 @@
         "guest": {
             "name": "Guest",
             "password": ""
-        }
+        },
+        "current_profile": "Admin"
     },
     "style": {
         "theme": "Dark"

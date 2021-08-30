@@ -25,8 +25,9 @@ class Ui(QMainWindow):
 		self.lineEdit_new_password.setEchoMode(QLineEdit.Password)
 		self.lineEdit_login_password.setEchoMode(QLineEdit.Password)
 		self.actionConfiguration.triggered.connect(lambda: self.stackedWidget.setCurrentIndex(2))
+		self.actionLog_Out.triggered.connect(lambda: onLogout(self))
 		self.pushButton_cancel.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
-		self.pushButton_log_out.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
+		self.pushButton_log_out.clicked.connect(lambda: onLogout(self))
 		self.pushButton_add_data_path.clicked.connect(lambda: onAddDataPath(self))
 		self.pushButton_apply.clicked.connect(lambda: onApplay(self, app))
 		self.pushButton_login.clicked.connect(lambda: onLogin(self))
@@ -70,7 +71,6 @@ class Ui(QMainWindow):
 
 		# LEFT AREA
 		data = loadData()
-		print(data)
 		self.layout = FlowLayout(self.widget_items)
 		for key, value in data.items():
 			item_card = YooHoo(value["photo_path"], value["item_name"])

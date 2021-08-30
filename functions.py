@@ -63,7 +63,7 @@ def onSubmit(self, prohibition,warning,mandatory,emergency,firefighting,chemical
 	template.manufacturer_name = self.lineEdit_manufacturer.text()
 	template.item_location = self.lineEdit_item_location.text()
 	template.current_quantity = self.doubleSpinBox_quantity.value()
-	template.quantity_per_package = self.lineEdit_quantit_per_package.text()
+	template.quantity_per_package = self.lineEdit_quantity_per_package.text()
 	template.supplier = self.lineEdit_supplier.text()
 	template.distributor = self.lineEdit_distributor.text()
 	template.more_info = self.lineEdit_more_info.text()
@@ -75,8 +75,6 @@ def onSubmit(self, prohibition,warning,mandatory,emergency,firefighting,chemical
 	template.safety_labels["emergency" ]= emergency[0].getCheckedList(emergency[1])
 	template.safety_labels["firefighting"] = firefighting[0].getCheckedList(firefighting[1])
 	template.safety_labels["chemical"] = chemical[0].getCheckedList(chemical[1])
-
-	print(template)
 
 ##########################
 ## CONFIGURATION SCREEN ##
@@ -99,6 +97,13 @@ def writeCFG(data):
 	with open('lib/cfg.json', 'w', encoding='utf-8') as f:
 		json.dump(data, f, ensure_ascii=False, indent=4)
 
+def setLogIn(self, cfg_data):
+	self.lineEdit_login_password.clear()
+	self.checkBox_remember_me.setChecked(False)
+	if cfg_data.profiles["remember"]["status"]:
+		self.checkBox_remember_me.setChecked(True)
+		self.lineEdit_login_password.setText(cfg_data.profiles[cfg_data.profiles["remember"]["profile"].lower()]["password"])
+
 def setCFG(self, app):
 	cfg_data = Bunch(loadCFG())
 	path_option = cfg_data.initialisation["path_option"]
@@ -109,15 +114,15 @@ def setCFG(self, app):
 	#elif path_option == "API":
 	#	self.radioButton_api.setChecked(True)
 
-	# Set profile to memorised one
-	self.comboBox_profile.setCurrentIndex([self.comboBox_profile.itemText(i) for i in range(self.comboBox_profile.count())].index(cfg_data.profiles["current_profile"]))
-
 	# Set data path to memorised one
 	self.lineEdit_data_path.setText(cfg_data.initialisation["path"])
 
 	# Set theme to memorised one
 	self.comboBox_theme.setCurrentIndex([self.comboBox_theme.itemText(i) for i in range(self.comboBox_theme.count())].index(cfg_data.style["theme"]))
 	onTheme(self, app)
+
+	# Set log in
+	setLogIn(self,cfg_data)
 
 def onAddDataPath(self):
 	data_path = QFileDialog.getOpenFileName(self, 'Open file', self.lineEdit_data_path.text(),"JSON file (*.json)")[0]
@@ -148,19 +153,34 @@ def onApplay(self, app):
 
 	writeCFG(cfg_data)
 	self.stackedWidget.setCurrentIndex(1)
-	print(cfg_data)
 
 ##################
 ## LOGIN SCREEN ##
 ##################
 def onLogin(self):
-    cfg_data = Bunch(loadCFG())
-    current_profile = str(self.comboBox_login_profiles.currentText())
-    if self.lineEdit_login_password.text()==cfg_data.profiles[current_profile.lower()]["password"]:
-        cfg_data.profiles["current_profile"] = str(self.comboBox_login_profiles.currentText())
+	cfg_data = Bunch(loadCFG())
+	current_profile = str(self.comboBox_login_profiles.currentText())
+	if self.checkBox_remember_me:
+		cfg_data.profiles["remember"]["status"]=True
+	else:
+		cfg_data.profiles["remember"]["status"]=False
+	writeCFG(cfg_data)
+	if self.lineEdit_login_password.text()==cfg_data.profiles[current_profile.lower()]["password"]:
+		cfg_data.profiles["current_profile"] = str(self.comboBox_login_profiles.currentText())
 		writeCFG(cfg_data)
+		authorization(self, current_profile)
+		self.lineEdit_login_password.clear()
 		self.stackedWidget.setCurrentIndex(1)
-    else:
-        msg_text = "Login failed."
-        sub_msg_text = "The entered password does not match/incorrect the selected profile."
-        passwordMsg(msg_text, sub_msg_text)
+	else:
+		msg_text = "Login failed."
+		sub_msg_text = "The entered password does not match/incorrect the selected profile."
+		passwordMsg(msg_text, sub_msg_text)
+		self.lineEdit_login_password.clear()
+
+def onLogout(self):
+	cfg_data = Bunch(loadCFG())
+	print(cfg_data)
+	setLogIn(self, cfg_data)
+	self.stackedWidget.setCurrentIndex(0)
+
+	

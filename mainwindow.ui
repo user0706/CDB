@@ -401,14 +401,14 @@ QSplitter::handle:vertical {
 }</string>
               </property>
               <property name="currentIndex">
-               <number>2</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="page">
                <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>790</width>
+                 <width>687</width>
                  <height>513</height>
                 </rect>
                </property>
@@ -926,7 +926,7 @@ QDoubleSpinBox::up-button  {
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>790</width>
+                 <width>687</width>
                  <height>513</height>
                 </rect>
                </property>
@@ -981,7 +981,7 @@ QDoubleSpinBox::up-button  {
                     </widget>
                    </item>
                    <item alignment="Qt::AlignVCenter">
-                    <widget class="QLineEdit" name="lineEdit_quantit_per_package">
+                    <widget class="QLineEdit" name="lineEdit_quantity_per_package">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1309,8 +1309,8 @@ QDoubleSpinBox::up-button  {
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>790</width>
-                 <height>513</height>
+                 <width>256</width>
+                 <height>230</height>
                 </rect>
                </property>
                <attribute name="label">
@@ -1522,7 +1522,10 @@ QDoubleSpinBox::up-button  {
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_18">
                     <item alignment="Qt::AlignTop">
-                     <widget class="QWidget" name="widget_15" native="true">
+                     <widget class="QWidget" name="widget_prohibition_2" native="true">
+                      <property name="enabled">
+                       <bool>true</bool>
+                      </property>
                       <layout class="QVBoxLayout" name="verticalLayout_7">
                        <property name="leftMargin">
                         <number>0</number>
@@ -1607,7 +1610,7 @@ QDoubleSpinBox::up-button  {
                      </widget>
                     </item>
                     <item alignment="Qt::AlignTop">
-                     <widget class="QFrame" name="frame_17">
+                     <widget class="QFrame" name="frame_warning">
                       <property name="frameShape">
                        <enum>QFrame::NoFrame</enum>
                       </property>
@@ -1698,7 +1701,7 @@ QDoubleSpinBox::up-button  {
                      </widget>
                     </item>
                     <item alignment="Qt::AlignTop">
-                     <widget class="QFrame" name="frame_18">
+                     <widget class="QFrame" name="frame_mandatory">
                       <property name="frameShape">
                        <enum>QFrame::NoFrame</enum>
                       </property>
@@ -1789,7 +1792,7 @@ QDoubleSpinBox::up-button  {
                      </widget>
                     </item>
                     <item alignment="Qt::AlignTop">
-                     <widget class="QFrame" name="frame_19">
+                     <widget class="QFrame" name="frame_emergency">
                       <property name="frameShape">
                        <enum>QFrame::NoFrame</enum>
                       </property>
@@ -1880,7 +1883,7 @@ QDoubleSpinBox::up-button  {
                      </widget>
                     </item>
                     <item alignment="Qt::AlignTop">
-                     <widget class="QFrame" name="frame_20">
+                     <widget class="QFrame" name="frame_firefighting">
                       <property name="frameShape">
                        <enum>QFrame::NoFrame</enum>
                       </property>
@@ -1971,7 +1974,7 @@ QDoubleSpinBox::up-button  {
                      </widget>
                     </item>
                     <item alignment="Qt::AlignTop">
-                     <widget class="QFrame" name="frame_21">
+                     <widget class="QFrame" name="frame_chemical">
                       <property name="frameShape">
                        <enum>QFrame::NoFrame</enum>
                       </property>
@@ -2093,7 +2096,7 @@ QDoubleSpinBox::up-button  {
              </widget>
             </item>
             <item alignment="Qt::AlignHCenter">
-             <widget class="QFrame" name="frame">
+             <widget class="QFrame" name="frame_submit_delete">
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
               </property>
@@ -2128,7 +2131,7 @@ QDoubleSpinBox::up-button  {
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0, 255, 0, 200);</string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>Submit</string>
@@ -2150,7 +2153,7 @@ QDoubleSpinBox::up-button  {
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgba(255, 0, 0, 200);</string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>Delete</string>
@@ -2248,7 +2251,7 @@ border-width:3px;
          <widget class="QWidget" name="widget_2" native="true">
           <layout class="QVBoxLayout" name="verticalLayout_21">
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox_initialization">
              <property name="enabled">
               <bool>true</bool>
              </property>
@@ -2261,7 +2264,7 @@ border-width:3px;
               </font>
              </property>
              <property name="title">
-              <string>Initialisation</string>
+              <string>Initialization</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_13">
               <item>
@@ -2715,7 +2718,7 @@ border-width:3px;
               <number>0</number>
              </property>
              <item>
-              <widget class="QGroupBox" name="groupBox_2">
+              <widget class="QGroupBox" name="groupBox_profiles">
                <property name="font">
                 <font>
                  <family>Arial</family>
@@ -3059,7 +3062,7 @@ border-width:3px;
             </layout>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox_3">
+            <widget class="QGroupBox" name="groupBox_style">
              <property name="font">
               <font>
                <family>Arial</family>
@@ -3269,6 +3272,8 @@ border-width:3px;
     </property>
     <addaction name="actionConfiguration"/>
     <addaction name="actionAbout"/>
+    <addaction name="separator"/>
+    <addaction name="actionLog_Out"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -3280,6 +3285,14 @@ border-width:3px;
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionLog_Out">
+   <property name="text">
+    <string>Log Out</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
  </widget>
