@@ -1,0 +1,30 @@
+{
+    "initialisation": {
+        "path_option": "Local",
+        "path": "./lib/data.json",
+        "language": "English",
+        "date_format": "Auto (local)"
+    },
+    "profiles": {
+        "remember": {
+            "status": true,
+            "profile": "Admin"
+        },
+        "admin": {
+            "name": "Admin",
+            "password": "adamin"
+        },
+        "user": {
+            "name": "User",
+            "password": "1"
+        },
+        "guest": {
+            "name": "Guest",
+            "password": ""
+        },
+        "current_profile": "Admin"
+    },
+    "style": {
+        "theme": "Dark"
+    }
+}

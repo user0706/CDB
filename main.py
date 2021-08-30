@@ -3,12 +3,14 @@ from PyQt5 import uic
 from PyQt5.QtGui     import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore    import *
+from myqt import *
 import sys
 
 from functions import *
 
 SELECTED_PHOTO_PATH = ""
 SELECTED_MSDS_PATH = ""
+DATA_PATH = ""
 
 item_changed_template = ""
 
@@ -18,6 +20,19 @@ class Ui(QMainWindow):
 		uic.loadUi('mainwindow.ui', self)
 
 		self.splitter.setSizes([800,280])
+		setProfilesToComboBox(self)
+		self.lineEdit_current_password.setEchoMode(QLineEdit.Password)
+		self.lineEdit_new_password.setEchoMode(QLineEdit.Password)
+		self.lineEdit_login_password.setEchoMode(QLineEdit.Password)
+		self.actionConfiguration.triggered.connect(lambda: self.stackedWidget.setCurrentIndex(2))
+		self.actionLog_Out.triggered.connect(lambda: onLogout(self))
+		self.pushButton_cancel.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
+		self.pushButton_log_out.clicked.connect(lambda: onLogout(self))
+		self.pushButton_add_data_path.clicked.connect(lambda: onAddDataPath(self))
+		self.pushButton_apply.clicked.connect(lambda: onApplay(self, app))
+		self.pushButton_login.clicked.connect(lambda: onLogin(self))
+
+		setCFG(self, app)
 
 		# RIGHT AREA
 		item_data_template = Bunch({"photo_path": "","item_name":"","manufacturer_name":"","item_location":"","current_quantity":"","quantity_per_package":"","supplier":"","distributor":"","more_info":"","keywords":[],"msds_path":"","safety_labels":{"prohibition":[],"warning":[],"mandatory":[],"emergency":[],"firefighting":[],"chemical":[]}})
@@ -56,7 +71,6 @@ class Ui(QMainWindow):
 
 		# LEFT AREA
 		data = loadData()
-		print(data)
 		self.layout = FlowLayout(self.widget_items)
 		for key, value in data.items():
 			item_card = YooHoo(value["photo_path"], value["item_name"])
